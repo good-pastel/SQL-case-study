@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <title>
+        Devi Yolanda | SQL Case Study
+    </title>
+    <!-- Google Fonts -->
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
+    <!-- Tabler Icons -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+    <!-- ChartJS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- CSS -->
+    <link rel="stylesheet"
+          href="css/style.css">
+</head>
+<body>
+<!-- ====================================== -->
+<!-- PROGRESS -->
+<!-- ====================================== -->
+<div id="progress"></div>
+<!-- ====================================== -->
+<!-- CONTAINER -->
+<!-- ====================================== -->
+<div class="container">
+<!-- ====================================== -->
+<!-- SIDEBAR -->
+<!-- ====================================== -->
+<aside class="sidebar">
+<button id="themeToggle">
+    🌙
+</button>
+<div class="brand">
+<div class="brand-icon">
+DY
+</div>
+<h2>
+Data Analyst
+</h2>
+<p>
+SQL Case Study
+</p>
+</div>
+<nav>
+<a href="#overview">
+<i class="ti ti-home"></i>
+Overview
+</a>
+<a href="#dataset">
+<i class="ti ti-database"></i>
+Dataset
+</a>
+<a href="#questions">
+<i class="ti ti-help"></i>
+Business Questions
+</a>
+<a href="#analysis">
+<i class="ti ti-code"></i>
+SQL Analysis
+</a>
+<a href="#visualization">
+<i class="ti ti-chart-bar"></i>
+Visualizations
+</a>
+<a href="#downloads">
+<i class="ti ti-bulb"></i>
+Downloads
+</a>
+</nav>
+<div class="tools">
+<h4>
+Tools
+</h4>
+<div>
+<i class="ti ti-brand-mysql"></i>
+MySQL
+</div>
+<div>
+<i class="ti ti-chart-bar"></i>
+ChartJS
+</div>
+<div>
+<i class="ti ti-brand-github"></i>
+GitHub
+</div>
+<div>
+<i class="ti ti-file-code"></i>
+HTML
+</div>
+<div>
+<i class="ti ti-file-type-css"></i>
+CSS
+</div>
+<div>
+<i class="ti ti-brand-javascript"></i>
+JavaScript
+</div>
+</div>
+</aside>
+<!-- ====================================== -->
+<!-- MAIN -->
+<!-- ====================================== -->
+<main class="main">
+<!-- ====================================== -->
+<!-- OVERVIEW -->
+<!-- ====================================== -->
+<section id="overview">
+<header>
+<h1>
+SQL Case Study
+</h1>
+<p>
+Exploratory Data Analysis using MySQL
+</p>
+</header>
+<div class="hero-grid">
+<div class="hero-card">
+<h3>
+Project Overview
+</h3>
+<p>
+This case study explores salary trends among Data Analyst related roles using MySQL.
+The project demonstrates data validation, exploratory analysis, salary comparison, country analysis, and Common Table Expressions (CTE).
+</p>
+</div>
+<div class="hero-card">
+<h3>
+Project Scope
+</h3>
+<p>
+<strong>Q = Question</strong>
+<br><br>
+Q1 : Dataset Validation
+<br>
+Q2 : Job Exploration
+<br>
+Q3 : Data Analyst Roles
+<br>
+Q4 - Q6 : Salary Analysis
+<br>
+Q7 - Q8 : Salary by Country Analysis
+<br>
+Q9 : CTE Analysis
+</p>
+</div>
+</div>
+</section>
+<!-- ====================================== -->
+<!-- DATASET -->
+<!-- ====================================== -->
+<section id="dataset">
+<h2>
+Dataset
+</h2>
+<div class="hero-grid">
+<div class="hero-card">
+<h3>
+Data Science Salaries
+</h3>
+<p>
+<a href="https://www.kaggle.com/datasets/ruchi798/data-science-job-salaries" target="_blank">
+    Source Dataset
+</a> 
+</p>
+</div>
+<div class="hero-card">
+<h3>
+Statistics
+</h3>
+<p>
+Rows :
+<strong>
+608
+</strong>
+</p>
+<p>
+Columns :
+<strong>
+12
+</strong>
+</p>
+<p>
+Job Titles :
+<strong>
+50
+</strong>
+</p>
+<p>
+Years :
+<strong>
+2020–2022
+</strong>
+</p>
+</div>
+</div>
+</section>
+<!-- ====================================== -->
+<!-- QUESTIONS -->
+<!-- ====================================== -->
+<section id="questions">
+<h2>
+Business Questions
+</h2>
+<div class="hero-card">
+<h3>
+Business Questions
+</h3>
+<ol class="question-list">
+<li>Are there any NULL values in the dataset?</li>
+<li>What job titles are available in the dataset?</li>
+<li>Which job titles are related to Data Analyst roles?</li>
+<li>What is the average salary for Data Analyst-related roles?</li>
+<li>What is the average salary by experience level?</li>
+<li>What is the average salary by experience level and employment type?</li>
+<li>Which countries offer the most attractive salaries for Data Analyst-related roles?</li>
+<li>Which countries offer the most attractive salaries for Data Analyst-related roles for full-time positions at entry to mid-level experience</li>
+<li>Using a Common Table Expression (CTE), determine the year in which the salary growth from mid-level to senior-level positions was the highest among full-time Data Analyst-related roles.</li>
+</ol>
+</div>
+</section>
+<!-- ====================================== -->
+<!-- ANALYSIS -->
+<!-- ====================================== -->
+<div id="analysis">
+<!-- HTML PART 2 -->
+<!-- ====================================== -->
+<!-- Q1 -->
+<!-- ====================================== -->
+<section class="study-card">
+<h2>
+Q1 · Dataset Validation
+</h2>
+<p>
+The dataset is complete and does not contain missing values, making it suitable for further exploratory analysis.
+</p>
+<div class="query-section">
+<div class="study-box">
+<h4>
+Query
+</h4>
+<img src="query/query1.png"
+class="query-img">
+</div>
+<div class="result-grid">
+<div class="study-box">
+<h4>
+Result
+</h4>
+<img src="result/q1.png"
+class="query-img">
+</div>
+<div class="study-box">
+<h4>
+Insight
+</h4>
+<div class="insight">
+<p>
+No missing values were identified, indicating that the dataset is clean and ready for analysis.
+</p>
+</div>
+</div>
+</div>
+</section>
+<!-- ====================================== -->
+<!-- Q2 -->
+<!-- ====================================== -->
+<section class="study-card">
+<h2>
+Q2 · Job Title Exploration
+</h2>
+<p>
+The dataset includes 50 unique job titles spanning analyst, scientist, engineer, architect, and executive positions.
+</p>
+<div class="query-section">
+<div class="study-box">
+<h4>
+Query
+</h4>
+<img src="query/query2.png"
+class="query-img">
+</div>
+<div class="study-box">
+
+    <h4>Result</h4>
+
+    <div class="result-summary">
+
+        <h3>50</h3>
+        <p>Unique Job Titles</p>
+
+    </div>
+
+    <div class="table-scroll">
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>Job Title</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr><td>3D Computer Vision Researcher</td></tr>
+                <tr><td>AI Scientist</td></tr>
+                <tr><td>Analytics Engineer</td></tr>
+                <tr><td>Applied Data Scientist</td></tr>
+                <tr><td>Applied Machine Learning Scientist</td></tr>
+                <tr><td>BI Data Analyst</td></tr>
+                <tr><td>Big Data Architect</td></tr>
+                <tr><td>Big Data Engineer</td></tr>
+                <tr><td>Business Data Analyst</td></tr>
+                <tr><td>Cloud Data Engineer</td></tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <p class="more-data">
+        Showing 10 of 50 job titles
+    </p>
+
+</div>
+<div class="study-box">
+<h4>
+Insight
+</h4>
+<div class="insight">
+<p>
+Since the dataset includes multiple data professions, Data Analyst-related roles will be identified and selected for subsequent salary analysis.
+</p>
+</div>
+</div>
+</div>
+</section>
+<!-- ====================================== -->
+<!-- Q3 -->
+<!-- ====================================== -->
+<section class="study-card">
+<h2>
+Q3 · Data Analyst Roles
+</h2>
+<p>
+Nine Data Analyst-related roles were identified and selected for subsequent salary analysis.
+</p>
+<div class="query-section">
+<div class="study-box">
+<h4>
+Query
+</h4>
+<img src="query/query3.png"
+class="query-img">
+</div>
+<div class="result-grid">
+<div class="study-box">
+<h4>
+Result
+</h4>
+<img src="result/q3.png"
+class="query-img">
+</div>
+<div class="study-box">
+<h4>
+Insight
+</h4>
+<div class="insight">
+<p>
+Focusing on Data Analyst-related roles ensures a more targeted and meaningful comparison of salary trends.
+</p>
+</div>
+</div>
+</div>
+</section>
+<!-- HTML PART 3 -->
+<!-- ====================================== -->
+<!-- Q4 -->
+<!-- ====================================== -->
+<section class="study-card" id="visualization">
+    <h2>
+        Q4 · Average Salary Analysis Across 9 Data Analyst Roles
+    </h2>
+    <p>
+        Financial Data Analyst records the highest average annual salary among the selected Data Analyst-related roles, earning approximately <strong>$275,000 per year.</strong>
+    </p>
+    <div class="query-section">
+        <!-- Query -->
+        <div class="study-box">
+            <h4>Query</h4>
+            <img src="query/query4.png"
+                 class="query-img">
+        </div>
+        <!-- Visualization -->
+         <div class="result-grid">
+        <div class="study-box">
+            <h4>Visualization</h4>
+            <canvas id="q4Chart"></canvas>
+        </div>
+        <!-- Insight -->
+        <div class="study-box">
+            <h4>Insight</h4>
+            <div class="insight">
+                <p>
+                    Average salaries vary considerably across Data Analyst-related roles. Financial Data Analysts receive the highest compensation, with an average annual salary of approximately <strong>$275,000</strong>, equivalent to around <strong>$22,917 per month.</strong>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ====================================== -->
+<!-- Q4.1 -->
+<!-- ====================================== -->
+<section class="study-card">
+    <h2>
+        Q5 · Average Salary by Experience Level Across 9 Data Analyst Roles
+    </h2>
+    <p>
+       Financial Data Analysts record the highest average annual salary among the selected roles at the Mid-level (MI) experience level.
+    </p>
+    <div class="query-section">
+        <!-- Query -->
+        <div class="study-box">
+            <h4>
+                Query
+            </h4>
+            <img src="query/query4-1.png"
+                 class="query-img">
+        </div>
+        <!-- Chart -->
+         <div class="result-grid">
+        <div class="study-box">
+            <h4>
+                Visualization
+            </h4>
+            <canvas id="q41Chart"></canvas>
+        </div>
+        <!-- Insight -->
+        <div class="study-box">
+            <h4>
+                Insight
+            </h4>
+            <div class="insight">
+                <p>
+                    Salaries generally increase with experience level. Financial Data Analysts at the Mid-level (MI) experience category receive the highest average annual compensation among the selected roles, suggesting a significant premium for specialized analytical expertise in the financial sector.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ====================================== -->
+<!-- Q4.2 -->
+<!-- ====================================== -->
+<section class="study-card">
+    <h2>
+        Q6 · Average Salary by Experience Level and Employment Type Across 9 Data Analyst Roles
+    </h2>
+    <p>
+        Incorporating employment type into the analysis does not alter the ranking of the selected roles. Financial Data Analysts at the Mid-level (MI) and Full-Time category continue to record the highest average annual salary.
+    </p>
+    <div class="query-section">
+        <!-- Query -->
+        <div class="study-box">
+            <h4>
+                Query
+            </h4>
+            <img src="query/query4-2.png"
+                 class="query-img">
+        </div>
+        <!-- Chart -->
+         <div class="result-grid">
+        <div class="study-box">
+            <h4>
+                Visualization
+            </h4>
+            <canvas id="q42Chart"></canvas>
+        </div>
+        <!-- Insight -->
+        <div class="study-box">
+            <h4>
+                Insight
+            </h4>
+            <div class="insight">
+                <p>
+                    Employment type does not contribute additional salary variation in this analysis, as all selected Data Analyst-related roles are classified as Full-Time positions. Therefore, salary trends remain consistent with the experience-level findings.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- HTML PART 4 -->
+<!-- ====================================== -->
+<!-- Q5 -->
+<!-- ====================================== -->
+<section class="study-card">
+<h2>
+Q7 · Salary Analysis by Country Across 9 Data Analyst Roles
+</h2>
+<p>
+<strong>The United States</strong> records the highest average annual salary among the analyzed countries for Data Analyst-related roles.
+</p>
+<div class="query-section">
+<!-- Query -->
+<div class="study-box">
+<h4>
+Query
+</h4>
+<img src="query/query5.png"
+class="query-img">
+</div>
+<!-- Chart -->
+ <div class="result-grid">
+<div class="study-box">
+<h4>
+Visualization
+</h4>
+<canvas id="q5Chart"></canvas>
+</div>
+<!-- Insight -->
+<div class="study-box">
+<h4>
+Insight
+</h4>
+<div class="insight">
+<p>
+Salary distribution differs substantially by country, suggesting that geographic location is an important factor influencing compensation opportunities for Data Analysts.
+</p>
+</div>
+</div>
+</div>
+</section>
+<!-- ====================================== -->
+<!-- Q5.1 -->
+<!-- ====================================== -->
+<section class="study-card">
+<h2>
+Q8 · Salary by Country (Full-Time, Entry to Mid-Level) Across 9 Data Analyst Roles
+</h2>
+<p>
+<strong>The United States</strong> continues to offer the highest average annual salary for Full-Time Entry to Mid-Level Data Analyst-related roles, while <Strong>Canada</Strong> emerges as the second-highest paying country, replacing Denmark from the previous analysis.
+</p>
+<div class="query-section">
+<div class="study-box">
+<h4>
+Query
+</h4>
+<img src="query/query5-1.png"
+class="query-img">
+</div>
+<div class="result-grid">
+<div class="study-box">
+<h4>
+Visualization
+</h4>
+<canvas id="q51Chart">
+</canvas>
+</div>
+<div class="study-box">
+<h4>
+Insight
+</h4>
+<div class="insight">
+<p>
+Restricting the analysis to Full-Time and Entry-to-Mid-Level positions alters the country ranking, suggesting that salary competitiveness varies across markets depending on employment type and experience level.
+</p>
+</div>
+</div>
+</div>
+</section>
+<!-- ====================================== -->
+<!-- Q6 -->
+<!-- ====================================== -->
+<section class="study-card"
+id="insight">
+<h2>
+Q9 · CTE Salary Comparison
+</h2>
+<p>
+Average salaries for both Mid-level (MI) and Executive-level (EX) professionals <strong>declined</strong> from 2021 to 2022. However, the salary gap widened from <strong>$41,601</strong> to <strong>$51,029</strong> due to a larger decrease in Mid-level salaries.
+</p>
+<div class="query-section">
+<div class="study-box">
+<h4>
+Query
+</h4>
+<img src="query/query6.png"
+class="query-img">
+</div>
+<div class="result-grid">
+<div class="study-box">
+<h4>
+Visualization
+</h4>
+<canvas id="q6Chart">
+</canvas>
+</div>
+<div class="study-box">
+<h4>
+Insights
+</h4>
+<div class="insight">
+<p>
+While compensation levels decreased across both experience groups, Mid-level professionals experienced a sharper decline, resulting in a wider salary gap between Mid-level and Executive-level roles in 2022.
+</p>
+</div>
+</div>
+</div>
+</section>
+<!-- ====================================== -->
+<!-- DOWNLOADS -->
+<!-- ====================================== -->
+<section id="downloads">
+<h2>
+Downloads
+</h2>
+<div class="hero-grid">
+<div class="hero-card">
+<h3>
+SQL Scripts
+</h3>
+<p>
+Download all MySQL queries used in this project.
+</p>
+<a href="sql/">
+Download SQL
+</a>
+</div>
+<div class="hero-card">
+<h3>
+Dataset
+</h3>
+<p>
+Original ds_salaries.csv dataset.
+</p>
+<a href="dataset/ds_salaries.csv">
+Download Dataset
+</a>
+</div>
+<div class="hero-card">
+<h3>
+Resume
+</h3>
+<p>
+Download my latest Resume.
+</p>
+<a href="resume/Devi Yolanda CV.pdf">
+Download Resume
+</a>
+</div>
+<div class="hero-card">
+<h3>
+GitHub Repository
+</h3>
+<p>
+Explore source code and project files.
+</p>
+<a href="https://github.com/good-pastel?tab=repositories">
+View Repository
+</a>
+</div>
+</div>
+</section>
+<!-- ====================================== -->
+<!-- FOOTER -->
+<!-- ====================================== -->
+<footer>
+<p>
+Designed & Developed by
+<strong>
+Devi Yolanda
+</strong>
+</p>
+<p>
+Data Analyst Portfolio • 2026
+</p>
+</footer>
+</main>
+</div>
+<!-- ====================================== -->
+<!-- JS -->
+<!-- ====================================== -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
