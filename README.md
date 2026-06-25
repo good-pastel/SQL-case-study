@@ -1,6 +1,6 @@
 # Devi Yolanda - Data Analyst Portfolio
 
-> [[Data Analyst Portfolio](https://good-pastel.github.io/data-analyst-portfolio)]
+> [[Data Analyst Portfolio](https://good-pastel.github.io/SQL-case-study)]
 
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
@@ -22,6 +22,8 @@
 ---
 
 ## Description
+
+SQL Case Study for Data Analyst Portfolio
 
 &copy; Good Pastel. 2026
 
