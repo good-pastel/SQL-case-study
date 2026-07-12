@@ -1,33 +1,128 @@
-# Devi Yolanda - SQL Case Study for Data Analyst Portfolio
+# SQL Case Study
 
-> [[SQL Case Study](https://good-pastel.github.io/SQL-case-study)]
+![SQL](https://img.shields.io/badge/SQL-MySQL-blue?logo=mysql)
+![Project](https://img.shields.io/badge/Project-Case%20Study-green)
+![Focus](https://img.shields.io/badge/Focus-Data%20Analytics-orange)
+![Type](https://img.shields.io/badge/Type-Portfolio-purple)
+![Status](https://img.shields.io/badge/Status-Completed-success)
 
-[![LinkedIn][linkedin-shield]][linkedin-url]
+A SQL case study that explores salary trends among Data Analyst–related roles using MySQL.
 
-<br />
-<div align="center">
-  <a href="https://github.com/good-pastel/good-pastel.github.io">
-    <img src="https://raw.githubusercontent.com/good-pastel/good-pastel.github.io/refs/heads/main/img/logo_trans.png" alt="Header">
-  </a>
-
-  <h3 align="center">Welcome to Good Pastel</h3>
-
-  <p align="center">
-   <blockquote><i>"Colors fade, but pastels hold their magic forever. Let the pastels be a reflection of the beauty within your soul."</i></blockquote>
-   <br />
-    <a href="https://github.com/good-pastel?tab=repositories"><strong>Explore the other Repo»</strong></a>
-  </p>
-</div>
+The project showcases data validation, exploratory data analysis, salary comparison, country-based analysis, and Common Table Expressions (CTEs) to answer business questions and generate meaningful insights through SQL.
 
 ---
 
-## Description
+## Live Demo
 
-SQL Case Study for Data Analyst Portfolio
+Visit the project documentation website:
 
-&copy; Good Pastel. 2026
+👉 https://good-pastel.github.io/SQL-case-study/
 
-<!-- MARKDOWN LINKS & IMAGES -->
+---
 
-[linkedin-shield]: https://img.icons8.com/arcade/64/linkedin.png
-[linkedin-url]: https://linkedin.com/in/deviyool
+## 📸 Preview
+
+![Home](query/home.png)
+
+---
+
+# 📖 Table of Contents
+
+- [Technologies](#-technologies)
+- [Case Studies](#case-studies)
+- [SQL Concepts Covered](#sql-concepts-covered)
+- [Project Overview](#-project-overview)
+- [Learning Objectives](#learning-objectives)
+- [Author](#author)
+
+---
+
+## 💻 Technologies
+
+- SQL
+- MySQL
+- HTML5
+- CSS3
+- JavaScript
+- Chart.js
+- Responsive Design
+
+---
+
+## Case Studies
+
+This project contains several SQL business scenarios, including:
+
+- Data Exploration
+- Data Filtering
+- Sorting Records
+- Aggregate Functions
+- GROUP BY
+- JOIN Operations
+- Common Table Expressions (CTE)
+- Business Reporting
+- Data Analysis
+
+---
+
+## SQL Concepts Covered
+
+### Data Retrieval
+
+- SELECT
+- DISTINCT
+- WHERE
+- ORDER BY
+- LIMIT
+
+### Data Aggregation
+
+- COUNT()
+- SUM()
+- AVG()
+- MIN()
+- MAX()
+- GROUP BY
+
+### Joins
+
+- LEFT JOIN
+
+### Advanced SQL
+
+- Common Table Expressions (CTE)
+
+---
+
+## 📝 Project Overview
+
+Each case study follows a structured approach:
+
+1. Business Problem
+2. Database Schema
+3. SQL Solution
+4. Query Explanation
+5. Output
+6. Business Insight
+
+This structure helps readers understand not only **how** a query works, but also **why** it is used to solve a specific business problem.
+
+---
+
+## Learning Objectives
+
+This project was built to practice:
+
+- SQL Fundamentals
+- Business Data Analysis
+- Problem Solving
+- Analytical Thinking
+- Technical Documentation
+
+---
+
+## Author
+
+**Devi Yolanda**
+
+Technical Writer • SQL Learner • Aspiring Data Analytics
