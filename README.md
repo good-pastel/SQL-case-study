@@ -99,11 +99,11 @@ This project contains several SQL business scenarios, including:
 Each case study follows a structured approach:
 
 1. Business Problem
-2. Database Schema
-3. SQL Solution
-4. Query Explanation
-5. Output
-6. Business Insight
+2. SQL Solution
+3. Query Explanation
+4. Output
+5. Business Insight
+
 
 This structure helps readers understand not only **how** a query works, but also **why** it is used to solve a specific business problem.
 
