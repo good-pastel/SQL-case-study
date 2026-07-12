@@ -80,8 +80,6 @@ This project contains several SQL business scenarios, including:
 - COUNT()
 - SUM()
 - AVG()
-- MIN()
-- MAX()
 - GROUP BY
 
 ### Joins
